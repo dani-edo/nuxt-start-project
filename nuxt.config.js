@@ -26,7 +26,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['semantic-ui-css/semantic.min.css'],
+  css: ['@/assets/styles.sass', 'semantic-ui-css/semantic.min.css'],
   /*
    ** Plugins to load before mounting the App
    */

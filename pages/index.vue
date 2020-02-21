@@ -7,7 +7,6 @@
           placeholder="Search everithing..."
           icon="search"
         />
-        <sui-button type="submit">Submit</sui-button>
       </sui-form>
     </sui-segment>
     <div>
@@ -16,6 +15,7 @@
           <card-component
             v-for="content in ip.results"
             :key="content.id"
+            :image-id="content.id"
             :image-url="content.urls.regular"
             :description="content.description"
             :created-at="content.created_at"

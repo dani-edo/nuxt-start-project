@@ -1,22 +1,28 @@
 <template>
-  <sui-card>
-    <sui-image :src="imageUrl" />
-    <sui-card-content>
-      <sui-card-header class="title">{{ description }}</sui-card-header>
-      <sui-card-meta>{{ createdAt }}</sui-card-meta>
-      <sui-card-description>{{ altDescription }}</sui-card-description>
-    </sui-card-content>
-    <sui-card-content extra>
-      <sui-icon name="user" />
-      {{ likes }} Likes
-    </sui-card-content>
-  </sui-card>
+  <nuxt-link :to="'detail/' + imageId" class="ui card">
+    <sui-card class="card-width">
+      <sui-image :src="imageUrl" />
+      <sui-card-content>
+        <sui-card-header class="title">{{ description }}</sui-card-header>
+        <sui-card-meta>{{ createdAt }}</sui-card-meta>
+        <sui-card-description>{{ altDescription }}</sui-card-description>
+      </sui-card-content>
+      <sui-card-content extra>
+        <sui-icon name="user" />
+        {{ likes }} Likes
+      </sui-card-content>
+    </sui-card>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
   name: 'CardEdo',
   props: {
+    imageId: {
+      type: String,
+      default: ''
+    },
     imageUrl: {
       type: String,
       default: ''
@@ -61,6 +67,9 @@ export default {
 
 .content {
   position: absolute;
+  width: 100%;
+}
+.card-width {
   width: 100%;
 }
 </style>

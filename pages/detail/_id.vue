@@ -3,7 +3,7 @@
     <nuxt-link to="/">
       <sui-button
         class="back"
-        content="Back"
+        content="BACK"
         icon="left arrow"
         label-position="left"
         color="red"
@@ -35,4 +35,7 @@ export default {
   position: fixed!important
   left: 10px
   top: 10px
+  opacity: .5
+  &:hover
+    opacity: 1
 </style>

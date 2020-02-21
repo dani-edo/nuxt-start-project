@@ -1,0 +1,51 @@
+<template>
+  <sui-card>
+    <sui-image :src="imageUrl" />
+    <sui-card-content>
+      <sui-card-header>{{ description }}</sui-card-header>
+      <sui-card-meta>{{ createdAt }}</sui-card-meta>
+      <sui-card-description>{{ altDescription }}</sui-card-description>
+    </sui-card-content>
+    <sui-card-content extra>
+      <sui-icon name="user" />
+      {{ likes }} Likes
+    </sui-card-content>
+  </sui-card>
+</template>
+
+<script>
+export default {
+  name: 'CardEdo',
+  props: {
+    imageUrl: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
+    },
+    createdAt: {
+      type: String,
+      default: ''
+    },
+    altDescription: {
+      type: String,
+      default: ''
+    },
+    likes: {
+      type: Number,
+      default: null
+    }
+  }
+}
+</script>
+
+<style scoped>
+.ui.card > .image,
+.ui.cards > .card > .image {
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+}
+</style>

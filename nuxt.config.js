@@ -19,15 +19,18 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#60c690',
+    height: '5px'
+  },
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['semantic-ui-css/semantic.min.css'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/semantic-ui', '@/plugins/axios'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -40,18 +43,24 @@ module.exports = {
    */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt',
+    // 'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],
+  // bootstrapVue: {
+  //   bootstrapCSS: false, // Or `css: false`
+  //   bootstrapVueCSS: false // Or `bvCSS: false`
+  // },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'https://api.unsplash.com'
+  },
   /*
    ** Build configuration
    */
@@ -60,5 +69,9 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  server: {
+    port: 14045,
+    host: '0.0.0.0' // default: localhost
   }
 }

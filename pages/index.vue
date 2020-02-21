@@ -1,55 +1,30 @@
 <template>
   <div class="ui container">
-    <sui-segment>
+    <sui-segment class="serch-container">
       <sui-form @submit.prevent="submitHandeller">
-        <sui-form-field>
-          <label>Type everything</label>
-          <input v-model="query" placeholder="Type whatever you fuck" />
-        </sui-form-field>
+        <sui-input
+          v-model="query"
+          placeholder="Search everithing..."
+          icon="search"
+        />
         <sui-button type="submit">Submit</sui-button>
       </sui-form>
     </sui-segment>
     <div>
-      <sui-segment>
-        <sui-checkbox v-model="visible" label="visible" />
-      </sui-segment>
-      <sui-sidebar-pushable>
-        <sui-menu
-          is="sui-sidebar"
-          :visible="visible"
-          animation="overlay"
-          width="thin"
-          icon="labeled"
-          inverted
-          vertical
-        >
-          <sui-menu-item to="/"> <sui-icon name="home" /> Home </sui-menu-item>
-          <sui-menu-item to="/">
-            <sui-icon name="gamepad" /> Games
-          </sui-menu-item>
-          <sui-menu-item to="/">
-            <sui-icon name="camera" /> Channels
-          </sui-menu-item>
-        </sui-menu>
-        <sui-sidebar-pusher :dimmed="visible">
-          <sui-segment>
-            <h3 is="sui-header">
-              <sui-card-group :items-per-row="3">
-                <card-component
-                  v-for="content in ip.results"
-                  :key="content.id"
-                  :image-url="content.urls.regular"
-                  :description="content.description"
-                  :created-at="content.created_at"
-                  :alt-description="content.alt_description"
-                  :likes="content.likes"
-                />
-              </sui-card-group>
-            </h3>
-            <!-- <docs-wireframe name="paragraph" /> -->
-          </sui-segment>
-        </sui-sidebar-pusher>
-      </sui-sidebar-pushable>
+      <h3 is="sui-header">
+        <sui-card-group :items-per-row="3">
+          <card-component
+            v-for="content in ip.results"
+            :key="content.id"
+            :image-url="content.urls.regular"
+            :description="content.description"
+            :created-at="content.created_at"
+            :alt-description="content.alt_description"
+            :likes="content.likes"
+          />
+        </sui-card-group>
+      </h3>
+      <!-- <docs-wireframe name="paragraph" /> -->
     </div>
     <!-- modal error start -->
     <sui-modal v-model="modalOpen">
@@ -114,3 +89,24 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.serch-container {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  z-index: 1;
+}
+.ui.header {
+  margin-top: 30px;
+}
+@media screen and (max-width: 768px) {
+  .ui.three.cards > .card {
+    width: 100% !important;
+  }
+  .serch-container {
+    left: 0;
+    bottom: 0;
+  }
+}
+</style>

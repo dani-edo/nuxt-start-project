@@ -2,7 +2,7 @@
   <sui-card>
     <sui-image :src="imageUrl" />
     <sui-card-content>
-      <sui-card-header>{{ description }}</sui-card-header>
+      <sui-card-header class="title">{{ description }}</sui-card-header>
       <sui-card-meta>{{ createdAt }}</sui-card-meta>
       <sui-card-description>{{ altDescription }}</sui-card-description>
     </sui-card-content>
@@ -47,5 +47,20 @@ export default {
   height: 300px;
   object-fit: cover;
   object-position: top;
+}
+
+.content > div {
+  text-shadow: 0px 0px 20px white;
+}
+
+.title {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
 }
 </style>

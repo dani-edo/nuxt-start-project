@@ -49,6 +49,7 @@ module.exports = {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
+    // 'nuxt-lazy-load'
   ],
   // bootstrapVue: {
   //   bootstrapCSS: false, // Or `css: false`

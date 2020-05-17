@@ -1,6 +1,8 @@
 # nuxt-start-project
 
-A simple application for my training on input handling and state management in NuxtJs, also API request with Axios (get Image API from Unsplash)
+Simple application for my learning about handling input, state management, and routing in NuxtJs (Vue), also API requests with Axios (get the Image API from Unsplash)
+
+With this app, you can search for the image that you want, by inputting words (in English) at the input form, then press enter. And gotcha!. You will get a list of images that have themes that match the words that you entered in the form.
 
 ## Depedencies
 ```
